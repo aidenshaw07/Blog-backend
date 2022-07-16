@@ -1,7 +1,7 @@
 from .serializer import UserSerializer, PostSerializer
-from django.shortcuts import render, redirect
 from rest_framework import generics
 from .models import User, Post
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
@@ -18,11 +18,13 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
 
 # def user_list(request):
 #     users = User.objects.all()

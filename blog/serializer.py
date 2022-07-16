@@ -17,17 +17,18 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        read_only=True
-    )
-
+    # user = serializers.HyperlinkedRelatedField(
+    #     view_name='user_detail',
+    #     read_only=True
+    # )
+    user = UserSerializer()
     user_id = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(),
         source='user'
     )
 
     class Meta:
+        depth = 1
         model = Post
         fields = ('id', 'user', 'content',
                   'created_at', 'updated_at', 'user_id')

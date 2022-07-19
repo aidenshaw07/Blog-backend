@@ -1,16 +1,11 @@
 from django.urls import path
 from . import views
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView
-)
 
 
 urlpatterns = [
     path('users', views.UserList.as_view(), name='user_list'),
     path('users/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('posts/', views.PostList.as_view(), name='post_list'),
-    path('post/<int:pk>/', views.PostDetail.as_view(), name='post_detail'), 
+    path('posts/<int:pk>/', views.PostDetail.as_view(), name='post_detail'), 
 
 ]

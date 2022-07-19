@@ -17,11 +17,11 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    # user = serializers.HyperlinkedRelatedField(
-    #     view_name='user_detail',
-    #     read_only=True
-    # )
-    user = UserSerializer()
+    user = serializers.HyperlinkedRelatedField(
+        view_name='user_detail',
+        read_only=True
+    )
+    # user = UserSerializer()
     user_id = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(),
         source='user'

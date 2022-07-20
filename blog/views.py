@@ -23,7 +23,6 @@ class PostList(generics.ListCreateAPIView):
         return super().create(request, *args, **kwargs)
 
 
-
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer

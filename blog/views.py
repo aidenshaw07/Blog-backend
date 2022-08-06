@@ -13,6 +13,18 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class UserPostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    def create(self, request, *args, **kwargs):
+        print(request.data)
+        return super().create(request, *args, **kwargs)
+
+class UserPostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
 
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
@@ -21,7 +33,6 @@ class PostList(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         print(request.data)
         return super().create(request, *args, **kwargs)
-
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()

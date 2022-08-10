@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import User, Post
 
+
 class UserSerializer(serializers.ModelSerializer):
     # posts = serializers.HyperlinkedRelatedField(
     #     view_name='post_detail',
@@ -21,13 +22,11 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         view_name='user_detail',
         read_only=True
     )
-    user = UserSerializer()
+    # user = UserSerializer()
     user_id = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(),
         source='user'
     )
-
-    
 
     class Meta:
         depth = 1

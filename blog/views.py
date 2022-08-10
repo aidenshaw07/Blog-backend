@@ -4,6 +4,7 @@ from .models import User, Post
 
 # Create your views here.
 
+
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -13,13 +14,11 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 class UserPostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-    def create(self, request, *args, **kwargs):
-        print(request.data)
-        return super().create(request, *args, **kwargs)
 
 class UserPostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
@@ -27,12 +26,9 @@ class UserPostDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('created_at')
     serializer_class = PostSerializer
 
-    def create(self, request, *args, **kwargs):
-        print(request.data)
-        return super().create(request, *args, **kwargs)
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
@@ -45,5 +41,4 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 
 # def post_list(request):
 #     posts = Post.objects.all()
-#     return render(request, 'blog/post_list.html', {'posts': posts})    
-
+#     return render(request, 'blog/post_list.html', {'posts': posts})

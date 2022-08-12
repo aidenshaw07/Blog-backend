@@ -25,14 +25,14 @@ STATICFILE_DIR = (os.path.join(BASE_DIR, 'static'))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-$-wep&pt(77l$ic2e3co)vq7^b@292-k9cdi@(3$%z%5vie3ep'
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-$-wep&pt(77l$ic2e3co)vq7^b@292-k9cdi@(3$%z%5vie3ep')
-
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'django-insecure-$-wep&pt(77l$ic2e3co)vq7^b@292-k9cdi@(3$%z%5vie3ep')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -72,7 +72,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
-r"^https://\w+\.domain\.com$",
+    r"^https://\w+\.domain\.com$",
 ]
 
 CORS_ALLOW_METHODS = [
@@ -85,15 +85,15 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOW_HEADERS = [
-'accept',
-'accept-encoding',
-'authorization',
-'content-type',
-'dnt',
-'origin',
-'user-agent',
-'x-csrftoken',
-'x-requested-with',
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 ROOT_URLCONF = 'blog_django.urls'
@@ -183,4 +183,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-

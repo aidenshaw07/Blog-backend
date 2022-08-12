@@ -33,7 +33,8 @@ SECRET_KEY = os.environ.get(
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = [
-    'aidenshaw-blogpage.herokuapp.com'
+    'aidenshaw-blogpage.herokuapp.com',
+    'localhost'
 ]
 
 

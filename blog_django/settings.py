@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-import django_heroku
 from pathlib import Path
 import os
 
@@ -52,8 +51,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'corsheaders',
-    'rest_framework_simplejwt',
-    'django_heroku'
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -135,11 +133,11 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd948jgnr2lc1va',
-        'USER': 'mucxosohgjgmzs',
-        'PASSWORD': 'b52f9c44308f2ea53cdec8d9c1528589edba7b1a62323406b5de641db4280870',
-        'HOST': 'ec2-3-222-74-92.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'blog',
+        'USER': 'bloguser',
+        'PASSWORD': 'blog',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
@@ -178,12 +176,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-# STATIC_URL = 'static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-django_heroku.settings(locals())
-
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

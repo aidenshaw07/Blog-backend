@@ -133,10 +133,10 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'bloguser',
-        'PASSWORD': 'blog',
-        'HOST': 'localhost',
+        'NAME': 'd948jgnr2lc1va',
+        'USER': 'mucxosohgjgmzs',
+        'PASSWORD': 'b52f9c44308f2ea53cdec8d9c1528589edba7b1a62323406b5de641db4280870',
+        'HOST': 'ec2-3-222-74-92.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }

@@ -32,7 +32,12 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'aidenshaw-blogpage.herokuapp.com',
+    'localhost',
+    'aidenshaw-blogpagefrontend.herokuapp.com'
+    'aidenshaw-blogpagefrontend.herokuapp.com/users/'
+]
 
 
 # Application definition

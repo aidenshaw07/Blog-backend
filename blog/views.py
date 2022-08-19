@@ -26,7 +26,7 @@ class UserPostDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all().order_by('created_at')
+    queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
 
 

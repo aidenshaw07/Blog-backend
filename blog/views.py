@@ -6,7 +6,7 @@ from .models import User, Post
 
 
 class UserList(generics.ListCreateAPIView):
-    queryset = User.objects.all().order_by('-date_joined')
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
 

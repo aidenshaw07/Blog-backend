@@ -14,7 +14,7 @@ class UserSerializer(serializers.ModelSerializer):
         depth = 1
         model = User
         fields = ('id', 'firstName', 'lastName', 'userId',
-                  'email', 'password', 'photo_url', 'posts')
+                  'email', 'password', 'photo_url', 'posts', 'created_at', 'updated_at')
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):

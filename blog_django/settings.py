@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get(
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+# DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -68,8 +69,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://api.domain.com",
     "http://localhost:3000",
     "http://127.0.0.1:9000",
-    "https://aidenshaw-blogpagefrontend.herokuapp.com",
-    "https://web-production-1f83.up.railway.app/"
+    "https://aidenshaw-blogpagefrontend.herokuapp.com"
 ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [

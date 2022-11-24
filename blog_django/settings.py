@@ -96,7 +96,7 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-ROOT_URLCONF = 'blog_django.urls'
+# ROOT_URLCONF = 'blog_django.urls'
 
 TEMPLATES = [
     {
